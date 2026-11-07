@@ -24,7 +24,7 @@
 * **ST-002**: Master Project Instructions & AI Rules (`AGENTS.md`) [COMPLETED]
 * **ST-003**: Governance & Documentation Suite (`docs/`) [COMPLETED]
 * **ST-004**: Definition of Ready (DoR) & Definition of Done (DoD) [COMPLETED]
-* **ST-005**: Monorepo Scaffolding (`pnpm-workspace.yaml`, root `package.json`, apps/packages placeholders) [IN_PROGRESS]
+* **ST-005**: Monorepo Scaffolding (npm Workspaces in root `package.json`, apps/packages placeholders) [COMPLETED]
 * **ST-006**: Local Infrastructure Docker Compose (`docker-compose.yml`) [IN_PROGRESS]
 
 ### EPIC-1: Engineering Foundation & First API (Sprint 1)
@@ -115,3 +115,4 @@
 * **ST-1204**: Automated E2E testing with Playwright (Critical user journeys)
 * **ST-1205**: GitHub Actions CI/CD workflow (Lint, Typecheck, Test, Build)
 * **ST-1206**: Release notes, Architecture documentation finalize, and Portfolio presentation
+

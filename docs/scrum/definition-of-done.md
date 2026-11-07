@@ -13,11 +13,11 @@ A User Story or Technical Task is considered **Done** only when all of the follo
      - The end-to-end data flow.
 
 3. **Automated & Manual Verification**:
-   - Relevant automated tests (Unit and/or Integration) are written and pass cleanly (`pnpm test`).
+   - Relevant automated tests (Unit and/or Integration) are written and pass cleanly (`npm test`).
    - Manual verification in the browser / Postman / Swagger confirms expected operation.
 
 4. **Code Quality & Security Standards**:
-   - TypeScript compilation succeeds with zero errors (`pnpm build`).
+   - TypeScript compilation succeeds with zero errors (`npm run build`).
    - No sensitive data (passwords, secrets, private keys) committed or returned in API responses.
    - Code adheres to Separation of Concerns: Thin controllers, business logic in services, explicit DTO validation.
 
@@ -34,3 +34,4 @@ A User Story or Technical Task is considered **Done** only when all of the follo
 
 8. **Product Owner Acceptance**:
    - The user, acting as Product Owner, explicitly approves and accepts the increment.
+

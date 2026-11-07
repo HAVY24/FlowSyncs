@@ -7,7 +7,7 @@
 - **Repository Path**: `D:\Workspace\MOP\FlowSync – Real-time Team Collaboration Platform`
 - **Current Phase**: Phase 0 — Project Initiation
 - **Current Sprint**: Sprint 0 — Project Foundation & Governance
-- **Sprint Goal**: Establish project governance, create master documentation suite in `docs/`, initialize Git repository, configure Monorepo (pnpm + Turborepo), and prepare local Docker infrastructure (PostgreSQL 16, Redis 7, MinIO).
+- **Sprint Goal**: Establish project governance, create master documentation suite in `docs/`, initialize Git repository, configure Monorepo (npm Workspaces + Turborepo), and prepare local Docker infrastructure (PostgreSQL 16, Redis 7, MinIO).
 - **Sprint Status**: COMPLETED (Awaiting PM Sprint Review Acceptance)
 
 ---
@@ -17,7 +17,7 @@
 - [x] **ST-002**: Master Project Instructions & AI Rules (`AGENTS.md`) at repository root
 - [x] **ST-003**: Governance & Documentation Skeleton (`docs/project/`, `docs/scrum/`, `docs/architecture/`, `docs/learning/`)
 - [x] **ST-004**: Definition of Ready (DoR) & Definition of Done (DoD) formalization
-- [x] **ST-005**: Monorepo Scaffolding (`pnpm-workspace.yaml`, root `package.json`, `apps/*` and `packages/*` structure)
+- [x] **ST-005**: Monorepo Scaffolding (npm Workspaces in root `package.json`, `apps/*` and `packages/*` structure)
 - [x] **ST-006**: Local Infrastructure Docker Compose (`docker-compose.yml` & `.env.example`)
 
 ---
@@ -33,9 +33,10 @@
 
 ## Architecture Decisions Recorded (ADR Summary)
 - **ADR-001**: Modular Monolith over Microservices for initial build phases (Martin Fowler Monolith First pattern).
-- **ADR-002**: Turborepo + pnpm workspaces for Monorepo code sharing across web, api, and worker.
+- **ADR-002**: Turborepo + npm Workspaces for Monorepo code sharing across web, api, and worker.
 - **ADR-003**: Docker Compose for local infrastructure isolation (PostgreSQL 16, Redis 7, MinIO).
 - **ADR-004**: Git Branching Strategy using GitHub Flow (`main` branch for stable release; feature branches per sprint).
+- **ADR-005**: Official Package Manager: npm (v10+) and native npm Workspaces selected over pnpm to align with developer's learning path and reduce extraneous tool cognitive load.
 
 ---
 

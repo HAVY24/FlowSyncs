@@ -21,3 +21,4 @@ A User Story or Technical Task is considered **Ready** for Sprint Planning and i
 5. **Conceptual Clarity**:
    - The developer understands the foundational concepts (e.g., how JWT refresh rotation works before coding auth).
    - If a new concept is involved, a preliminary learning/research step is completed.
+

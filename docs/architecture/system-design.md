@@ -74,3 +74,4 @@ FlowSync adopts a **Modular Monolith** architecture for the core backend, paired
   - Client/UI state: React local state & **Zustand** when cross-component state is needed.
 - **Drag-and-Drop**: `dnd-kit` for accessible, 60fps Kanban board interactions with fractional positioning.
 - **Styling**: Tailwind CSS + `shadcn/ui` component primitives.
+

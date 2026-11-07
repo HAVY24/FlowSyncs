@@ -40,3 +40,4 @@ flowchart TD
 
 ### Phase 6: Production & Release
 - **Sprint 12**: Multi-Stage Production Dockerfiles, Nginx Reverse Proxy (SSL, WebSocket Upgrades), Automated E2E/Integration Testing, GitHub Actions CI/CD, Portfolio Release v1.0.
+

@@ -186,7 +186,8 @@ docs/
 - **Backend**: NestJS (Modular Monolith), TypeScript, REST API, Socket.IO, Prisma ORM, JWT, Passport.
 - **Data & Storage**: PostgreSQL 16, Redis 7, MinIO (S3-compatible).
 - **Background Worker**: BullMQ, Node.js background process (`apps/worker`).
-- **Infrastructure**: Monorepo (pnpm workspaces + Turborepo), Docker Compose, Nginx.
+- **Infrastructure**: Monorepo (npm workspaces + Turborepo), Docker Compose, Nginx.
+- **Package Manager**: npm (v10+). Do NOT use or suggest pnpm; all scripts, dependencies, and workspace commands MUST use npm (`npm install`, `npm run`, `npm test`).
 
 ---
 
@@ -217,3 +218,4 @@ docs/
 - `TEST PLAN`
 - `RELEASE`
 - `UPDATE PROJECT DOCUMENTATION`
+

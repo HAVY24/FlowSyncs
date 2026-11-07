@@ -49,7 +49,7 @@
 
 | Skill / Concept | Current Status | Demonstrated Evidence |
 | :--- | :--- | :--- |
-| **Monorepo Management (pnpm + Turborepo)**| PRACTICING | Scaffolding root structure and workspace boundaries. |
+| **Monorepo Management (npm Workspaces + Turborepo)**| PRACTICING | Scaffolding root structure and workspace boundaries. |
 | **Docker Compose Local Infrastructure** | PRACTICING | Defining multi-service orchestrations (PG, Redis, MinIO). |
 | **Git & Conventional Commits** | PRACTICING | Git repository initialized, commit conventions defined. |
 | **Scrum Methodology in Solo Practice** | PRACTICING | Sprint 0 kickoff, DoR, DoD, and Backlog management. |
@@ -57,3 +57,4 @@
 | **Docker Multi-Stage Optimization** | NOT STARTED | — |
 | **Nginx Reverse Proxy & SSL** | NOT STARTED | — |
 | **CI/CD Pipelines (GitHub Actions)** | NOT STARTED | — |
+

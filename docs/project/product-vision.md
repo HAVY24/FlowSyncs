@@ -15,3 +15,4 @@ Unlike traditional sluggish project trackers or overly fragmented SaaS tools, **
 - **Enterprise-Grade Data Handling**: Zero-crash streaming engines capable of exporting/importing 500,000+ task rows using Node.js stream pipelines.
 - **Defensive Security & Privacy**: Secure dual-token rotation with HttpOnly/SameSite cookies, granular RBAC, and client-direct presigned S3 uploads.
 - **Clean Architectural Boundaries**: Modular Monolith design pattern allowing seamless feature isolation, straightforward local development, and future microservice extraction.
+
