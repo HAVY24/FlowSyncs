@@ -14,9 +14,9 @@
 | :--- | :--- | :--- |
 | **Node.js Internals & Event Loop** | NOT STARTED | — |
 | **TypeScript Strict Typing & Generics** | NOT STARTED | — |
-| **HTTP Protocols & REST Design** | NOT STARTED | — |
-| **NestJS Architecture & DI Container** | NOT STARTED | — |
-| **PostgreSQL & Relational Data Modeling** | NOT STARTED | — |
+| **HTTP Protocols & REST Design** | PRACTICING | Built GET /health endpoint with proper routing and JSON response. |
+| **NestJS Architecture & DI Container** | PRACTICING | Implemented AppModule, HealthModule, Controller, and Service with Dependency Injection. |
+| **PostgreSQL & Relational Data Modeling** | PRACTICING | Connected NestJS to PostgreSQL via connection pool, handled query ping and resilience. |
 | **Prisma ORM & Migration Strategies** | NOT STARTED | — |
 | **Authentication: JWT & Refresh Rotation** | NOT STARTED | — |
 | **Authorization: Declarative RBAC Guards** | NOT STARTED | — |
@@ -50,7 +50,7 @@
 | Skill / Concept | Current Status | Demonstrated Evidence |
 | :--- | :--- | :--- |
 | **Monorepo Management (npm Workspaces + Turborepo)**| PRACTICING | Scaffolding root structure and workspace boundaries. |
-| **Docker Compose Local Infrastructure** | PRACTICING | Defining multi-service orchestrations (PG, Redis, MinIO). |
+| **Docker Compose Local Infrastructure** | MASTERED | Defined multi-service compose, resolved real-world port collisions, and debugged container networking. |
 | **Git & Conventional Commits** | PRACTICING | Git repository initialized, commit conventions defined. |
 | **Scrum Methodology in Solo Practice** | PRACTICING | Sprint 0 kickoff, DoR, DoD, and Backlog management. |
 | **Automated Testing Pyramid** | NOT STARTED | — |
