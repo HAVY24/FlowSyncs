@@ -6,23 +6,23 @@
 - **Project Name**: FlowSync
 - **Repository Path**: `D:\Workspace\MOP\FlowSync – Real-time Team Collaboration Platform`
 - **Current Phase**: Phase 1 — Engineering Foundation
-- **Current Sprint**: Sprint 1 — Development Environment & First API
-- **Sprint Goal**: Xây dựng và làm chủ một NestJS API cơ bản trong môi trường npm Monorepo, khởi động PostgreSQL qua Docker Compose, kết nối ứng dụng với Database qua biến môi trường (.env) và xây dựng endpoint `/health` kiểm tra toàn diện trạng thái server và dữ liệu.
+- **Current Sprint**: Sprint 2 — Database & Backend Architecture
+- **Sprint Goal**: Xây dựng nền tảng Backend chuẩn mực doanh nghiệp: Tích hợp Prisma ORM kết nối với PostgreSQL, thiết kế các bảng dữ liệu cốt lõi đầu tiên (User, Workspace, Member), thiết lập bộ lọc kiểm tra dữ liệu đầu vào (DTO Validation Pipe), và kích hoạt giao diện tài liệu tương tác Swagger API (/api/docs).
 - **Sprint Status**: COMPLETED (100% Acceptance Criteria Met)
 
 ---
 
-## Sprint 1 Execution Progress
-- [x] **Task 1**: Khởi động PostgreSQL 16 qua Docker Compose (giải quyết triệt để xung đột cổng 5432/5433, map cổng an toàn 5435:5432)
-- [x] **Task 2**: Làm chủ bản chất kiến trúc NestJS (Module, Controller, Service, Dependency Injection container)
-- [x] **Task 3**: Khởi tạo ứng dụng `apps/api` bằng npm Workspaces thuần túy (không dùng generator CLI)
-- [x] **Task 4**: Kết nối NestJS với PostgreSQL qua Connection Pool (`pg` driver) và bảo mật bằng biến môi trường qua `@nestjs/config`
-- [x] **Task 5**: Xây dựng Endpoint GET `/health` kiểm thử thực tế với cơ chế chịu lỗi (Fault Tolerance)
+## Sprint 2 Execution Progress
+- [x] **Task 1**: Cài đặt Prisma ORM (`prisma@^6.4.1`, `@prisma/client@^6.4.1` - ổn định, chuẩn hóa LTS)
+- [x] **Task 2**: Thiết kế Schema-First (`schema.prisma`) và chạy thành công Migration tạo bảng `users`, `workspaces`, `workspace_members`
+- [x] **Task 3**: Xây dựng `PrismaService` (Singleton lifecycle `$connect` / `$disconnect`) và `PrismaModule` `@Global()`
+- [x] **Task 4**: Thiết lập `ValidationPipe` toàn cục với `class-validator` & `class-transformer` (`whitelist: true`, `forbidNonWhitelisted: true`, `transform: true`)
+- [x] **Task 5**: Tích hợp Swagger / OpenAPI (`/api/docs`) với `@nestjs/swagger@^7.4.2`
 
 ---
 
 ## Backlog & Story Summary
-- **Completed Stories (Current Sprint)**: ST-101, ST-102, ST-104 (100%)
+- **Completed Stories**: ST-001 -> ST-006 (Sprint 0), ST-101 -> ST-105 (Sprint 1), ST-201 -> ST-205 (Sprint 2)
 - **Incomplete Stories (Current Sprint)**: None
 - **Current Blockers**: None
 - **Known Bugs**: None
@@ -37,22 +37,25 @@
 - **ADR-004**: Git Branching Strategy using GitHub Flow (`main` branch for stable release; `dev` / feature branches per sprint).
 - **ADR-005**: Official Package Manager: npm (v10+) and native npm Workspaces selected over pnpm.
 - **ADR-006**: Port Mapping: Dedicated host port 5435 mapped to container port 5432 to eliminate Windows PostgreSQL service collisions.
-- **ADR-007**: Centralized Configuration: `@nestjs/config` adopted for type-safe environment variable management without hardcoded credentials.
+- **ADR-007**: Centralized Configuration: `@nestjs/config` adopted for type-safe environment variable management.
+- **ADR-008**: Database Access: Prisma ORM (v6 LTS) selected with Schema-First migration workflow over raw SQL / Database-First.
+- **ADR-009**: Global Validation: `ValidationPipe` with strict whitelisting to eliminate mass-assignment vulnerabilities.
+- **ADR-010**: API Contracts: OpenAPI / Swagger integrated at `/api/docs` as the single interactive contract between Frontend and Backend.
 
 ---
 
 ## Learning Progress (Evidence-Based)
-- **NestJS Architecture & DI**: PRACTICING -> Implemented Root AppModule, HealthModule, Controller, and Service with Dependency Injection.
-- **HTTP Protocols & REST Design**: PRACTICING -> Built GET `/health` endpoint with status codes and structured JSON response.
-- **PostgreSQL & Docker Networking**: MASTERED -> Solved port collisions, volume mappings, and container lifecycle.
-- **Node.js Environment Security**: PRACTICING -> Successfully migrated hardcoded database credentials to `.env` using `@nestjs/config`.
+- **Prisma ORM & Migration Strategies**: MASTERED -> Designed multi-table schema, executed migrations, understood Schema-first vs DB-first trade-offs.
+- **Dependency Management & Peer Dependencies**: MASTERED -> Successfully resolved npm peer dependency conflicts with `@nestjs/config` and `@nestjs/swagger`.
+- **API Documentation & Contracts**: PRACTICING -> Configured OpenAPI DocumentBuilder and Swagger decorators.
+- **Defensive Backend Architecture**: PRACTICING -> Configured global validation pipes and exception-safe database queries.
 
 ---
 
 ## Next Priority & Next Sprint
-- Perform **Sprint 1 Review & Retrospective** with PM.
-- Transition to **Sprint 2: Database & Backend Architecture**:
-  - Tích hợp Prisma ORM kết nối với PostgreSQL.
-  - Thiết kế Schema cơ sở dữ liệu ban đầu (`User`, `Workspace`, `Member`).
-  - Thiết lập Global Exception Filter và Validation Pipe (`class-validator`, `zod`).
-  - Tích hợp OpenAPI / Swagger (`/api/docs`) để trực quan hóa API.
+- Perform **Sprint 2 Review & Retrospective** with PM.
+- Transition to **Phase 2 — Core Application | Sprint 3: Authentication & Security**:
+  - Mã hóa mật khẩu bảo mật bằng Argon2 / Bcrypt.
+  - Xây dựng luồng Đăng ký (Register) & Đăng nhập (Login).
+  - Kiến trúc Dual-Token: Access Token (ngắn hạn trong memory/header) + Refresh Token (dài hạn trong HttpOnly Cookie).
+  - Triển khai cơ chế Refresh Token Rotation và Auth Guards (`JwtAuthGuard`, `@CurrentUser()`).

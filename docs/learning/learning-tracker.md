@@ -15,9 +15,9 @@
 | **Node.js Internals & Event Loop** | NOT STARTED | — |
 | **TypeScript Strict Typing & Generics** | NOT STARTED | — |
 | **HTTP Protocols & REST Design** | PRACTICING | Built GET /health endpoint with proper routing and JSON response. |
-| **NestJS Architecture & DI Container** | PRACTICING | Implemented AppModule, HealthModule, Controller, and Service with Dependency Injection. |
+| **NestJS Architecture & DI Container** | MASTERED | Implemented Root AppModule, Global PrismaModule, Singleton PrismaService, Controllers, and Services. |
 | **PostgreSQL & Relational Data Modeling** | PRACTICING | Connected NestJS to PostgreSQL via connection pool, handled query ping and resilience. |
-| **Prisma ORM & Migration Strategies** | NOT STARTED | — |
+| **Prisma ORM & Migration Strategies** | MASTERED | Designed schema-first relational models (User, Workspace, Member), executed migrations, understood DB-first vs Schema-first. |
 | **Authentication: JWT & Refresh Rotation** | NOT STARTED | — |
 | **Authorization: Declarative RBAC Guards** | NOT STARTED | — |
 | **Database Indexing & Query Optimization**| NOT STARTED | — |

@@ -1,16 +1,9 @@
 import { Injectable } from "@nestjs/common";
-import { Pool } from "pg";
+import { PrismaService } from "../prisma/prisma.service";
 
 @Injectable()
 export class HealthService {
-    private pool: Pool;
-
-    constructor() {
-        this.pool = new Pool({
-            connectionString:
-                process.env.DATABASE_URL,
-        });
-    }
+    constructor(private readonly prisma: PrismaService) { }
 
     async checkHealth() {
         const uptimeSeconds = process.uptime();
@@ -18,7 +11,7 @@ export class HealthService {
         let dbError = null;
 
         try {
-            await this.pool.query('SELECT 1');
+            await this.prisma.$queryRaw`SELECT 1`;
             dbStatus = 'connected';
         } catch (error: any) {
             dbError = error.message;
